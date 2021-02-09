@@ -9,7 +9,7 @@ The process of training each classification RNN proceeded as follows:
 
 3.	Step 3 - Each flow file represented in dataframe is loaded into memory as a list/array of flow steps/sequences.
 
-4.	Step 4 - Sequence Padding/Truncation – Loaded flows that were longer than 10000 steps/sequences are truncated by removing steps 10001 and above. Flows that are shorter than 10000 steps/sequences are pre-padded  with ([0,0,0,0,0,0,0,0,0,0,0,0,0]) entries to make up the LSTM requirement  of 10000 steps per flow. Studies on the effectiveness of pre-padding versus post-padding  for LSTM sequences   suggest that pre-padding is preferable as LSTM models tend to bias towards models towards the post-padding entries the longer the sequences of padding used.
+4.	Step 4 - Sequence Padding/Truncation – Loaded flows that were longer than 10000 steps/sequences are truncated by removing steps 10001 and above. Flows that are shorter than 10000 steps/sequences are pre-padded  with ([0,0,0,0,0,0,0,0,0,0,0,0,0]) entries to make up the LSTM requirement  of 10000 steps per flow.
 
 At the end of steps 1 through 4 we would have generated a list of flows sequences (x values) and a corresponding list of classifications (y values) for each the training set. Each flow sequence comprising of 10000 steps with 13 features per step. 
 
